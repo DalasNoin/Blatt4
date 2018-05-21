@@ -1,0 +1,68 @@
+\documentclass[11pt]{scrartcl}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{svg}
+\usepackage{amsmath}
+\usepackage{import}
+
+\title{Lösung Blatt 4}
+\author{Gruppe Leibniz}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabe 1: Medium-Access-Control}
+\subsection{Medium-Access-Control (MAC) – Wofür braucht man das?}
+
+Ein Regelwerk, dass festlegt, wann ein Knoten den Funkkanal abhört oder ein Paket verschickt.
+Würden die Mitglieder eines Netzwerks beliebig Nachrichten versenden, käme es zu sehr vielen Kollisionen.
+
+\subsection{Warum ist beim Slotted-ALOHA der Datenverlust geringer als beim reinen ALOHA?}
+
+Bei ALOHA können Kollisionen auftreten, wenn sich zwei Nachrichten überschneiden.
+Bei Slotted ALOHA kann das nur passieren, wenn zwei Nachrichten genau den gleichen Slot belegen.
+
+\subsection{Beschreiben Sie das Konzept hinter Preamble-Sampling. Welche MAC-Protokolle nutzen dies?}
+
+Ein Netzwerkknoten hört periodisch den Funkkanal ab, ist der Kanal leer, schläft der Knoten für einen bestimmten Zeitraum.
+Will ein Knoten etwas versenden, schickt er zuerst eine Lange Preamble, länger als die Schlafdauer.
+Dadurch verbrauchen die Empfängerknoten weniger Strom, der Stromverbrauch verschiebt sich zum Sender.
+Preamble Sampling wird von X-MAC verwendet.
+
+\subsection{Nennen Sie mindestens drei Unterschiede der Protokolle XMAC und BOXMAC!}
+
+
+
+\subsection{Beschreiben Sie das Low-Energy-Adaptive-Clustering-Hierarchy-Verfahren (LEACH) in 3–4 Sätzen!}
+
+
+
+\subsection{Beschreiben Sie das Traffic-Adaptive-Medium-Access-Protokoll (TRAMA) in 3–4 Sätzen!}
+
+Um zu entscheiden, ob ein Knoten einen Timeslot verwenden soll, wird global eine Hashfunktion festgelegt.
+Die Hashfunktion bildet Zeit t und Node-Identifier x auf eine Zahl ab, die die Priorität darstellt.
+Will ein Knoten N eine Nachrichten senden, bestimmt N die eigene Priorität und die aller 2-Hop-Nachbarn, für die nächsten k Zeitschlitze.
+N verwendet dann die Zeitschlitze, mit der sie im Vergleich die höchste Priorität hat.
+
+\section{Aufgabe 2: OSI-Modell}
+
+\subsection{Welche Aufgaben haben die sieben Schichten des OSI-Modells jeweils?}
+
+\begin{tabular}{ l l  }
+  7 Anwendung & Dateneingabe und -ausgabe \\
+  6 Darstellung & Datenkompression, -verschlüsselung, -interpretation \\
+  5 Sitzung & Kommunikation eines laufenden Prozesses  \\
+  4 Transport & Segmentierung des Datenstroms und die Stauvermittlung  \\
+  3 Vermittlung & Schaltung der Verbindungen und die Weitervermittlung von \\ & Datenpaketen  \\
+  2 Sicherung & Weitesgehend fehlerfreie Übertragung eines Signals  \\
+  1 Bitübertragung & Physikalische übertragung des Signals  \\
+\end{tabular}
+
+
+\subsection{Auf welcher Schicht würden Sie MAC einordnen und warum?}
+
+
+\end{document}
